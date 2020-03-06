@@ -1,9 +1,9 @@
 QUnit.module('MAIN MODULE', {})
 
 QUnit.test('TEST calc', assert => {
-  assert.equal(add(1, 1), 2, 'Positive integers')
-  assert.equal(add(-1, -1), -2, 'Negative integers')
-  assert.equal(add(-10, 10), 0, 'Mixed')
+  assert.equal(calc(60, 150), 24.973985431842, 'Positive integers')
+  assert.equal(calc(-1, -1), -2, 'Negative integers')
+  assert.equal(calc(-10, 10), 0, 'Mixed')
 })
 
 QUnit.config.autostart = false // sync = false; start after loading html
