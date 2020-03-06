@@ -1,4 +1,4 @@
-const add = (x, y) => { return x + y }
+const calc = (x, y) => { return (x / (y * y))*10000 }
 
 const validate = async (event) => {
   console.log(`triggered validate on ${event.target.id}`)
@@ -11,7 +11,7 @@ const validate = async (event) => {
   }
 }
 
-const updateWithAdd = async (event) => {
+const updateWithCalc = async (event) => {
   try {
     document.querySelector('#result').innerHTML = ''
     if (document.querySelector('#firstNumber').checkValidity() && document.querySelector('#secondNumber').checkValidity()) {
@@ -19,7 +19,19 @@ const updateWithAdd = async (event) => {
       const s = document.querySelector('#guest').value.replace(regex, '')
       const i = parseInt(document.querySelector('#firstNumber').value)
       const j = parseInt(document.querySelector('#secondNumber').value)
-      const ans = `${s}, your sum is ${add(i, j)}.`
+      const ansOne = calc(i, j)
+      if(ansOne < 18.5){
+        ans = `${s}, your BMI is ${ansOne}, Underweight.`
+      }
+      else if(ansOne >= 18.5 && ansOne <= 24.9){
+        ans = `${s}, your BMI is ${ansOne}, Normal weight.`
+      }
+      else if(ansOne >= 25 && ansOne <= 29.9){
+        ans = `${s}, your BMI is ${ansOne}, Overweight.`
+      }
+      else{
+        ans = `${s}, your BMI is ${ansOne}, Obesity.`
+      }
       document.querySelector('#result').innerHTML = ans
     }
   } catch (error) { console.error(error) }
@@ -35,9 +47,6 @@ document.addEventListener('focusout', event => {
 })
 
 document.addEventListener('click', event => {
-  if (event.target && event.target.id === 'addButton') { updateWithAdd(event) }
+  if (event.target && event.target.id === 'addButton') { updateWithCalc(event) }
 })
 
-document.addEventListener('click', event => {
-  if (event.target && event.target.id === 'getJokeButton') { updateWithJoke(event) }
-})
