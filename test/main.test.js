@@ -1,9 +1,12 @@
 QUnit.module('MAIN MODULE', {})
 
 QUnit.test('TEST calc', assert => {
-  assert.equal(calc(64, 155), 26.63891779396462, 'Positive integers')
-  assert.equal(calc(-64, 155), -26.63891779396462, 'Negative integers')
-  assert.equal(calc(-64, -155), -26.63891779396462, 'Mixed')
+  assert.equal(calc(64, 155), 26.63891779396462, 'Both positive integers')
+  assert.equal(calc(-64, 155), -26.63891779396462, 'Negative weight')
+  assert.equal(calc(-64, -155), -26.63891779396462, 'Both negative integers')
+  assert.equal(calc(0, 150), 0, 'Zero weight')
+  assert.equal(calc(60, -155), 24.97398543184183, 'Negative height')
+
 })
 
 QUnit.config.autostart = false // sync = false; start after loading html
