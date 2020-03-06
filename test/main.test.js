@@ -1,9 +1,9 @@
 QUnit.module('MAIN MODULE', {})
 
 QUnit.test('TEST calc', assert => {
-  assert.equal(calc(60, 150), 24.973985431842, 'Positive integers')
-  assert.equal(calc(-1, -1), -2, 'Negative integers')
-  assert.equal(calc(-10, 10), 0, 'Mixed')
+  assert.equal(calc(64, 155), 26.63891779396462, 'Positive integers')
+  assert.equal(calc(-64, 155), -26.63891779396462, 'Negative integers')
+  assert.equal(calc(-64, -155), -26.63891779396462, 'Mixed')
 })
 
 QUnit.config.autostart = false // sync = false; start after loading html
@@ -31,8 +31,8 @@ window.addEventListener('load', () => {
 QUnit.test('TEST first number validation (DOM manipulation)', assert => {
   const input = document.querySelector('#firstNumber')
   const warning = document.querySelector('#firstWarning')
-  input.value = -3
-  assert.equal(input.value, -3, 'Bad value assigned')
+  input.value = -70
+  assert.equal(input.value, -70, 'Bad value assigned')
   assert.strictEqual(input.checkValidity(), false, 'Correctly fails validation')
   input.focus()
   input.blur()
@@ -42,8 +42,8 @@ QUnit.test('TEST first number validation (DOM manipulation)', assert => {
 QUnit.test('TEST second number validation (DOM manipulation)', assert => {
   const input = document.querySelector('#secondNumber')
   const warning = document.querySelector('#secondWarning')
-  input.value = -3
-  assert.equal(input.value, -3, 'Bad value assigned')
+  input.value = -70
+  assert.equal(input.value, -70, 'Bad value assigned')
   assert.strictEqual(input.checkValidity(), false, 'Correctly fails validation')
   input.focus()
   input.blur()
