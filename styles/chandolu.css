@@ -1,0 +1,47 @@
+*
+{
+    padding : 2px;
+    margin : 2px;
+    background-color: linear-gradient(to blue, white);
+}
+main{
+    background-color: thistle;
+}
+#image{
+    border-radius: 60%;
+    max-width: 10%;
+    display: block;
+    flex-basis: 20%;
+}
+body{
+    background-color: purple;
+}
+article
+{
+    color : rgb(83, 78, 129);
+    border : 10pxl solid black;
+    background-color: rosybrown;
+}
+aside
+{
+    color : lightcoral;
+    border: 10pxl solid black;
+    background-color: rgba(218, 161, 213, 0.712);
+}
+table{
+    background-color: thistle;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex-basis: 80%;
+    justify-content: center;
+}
+form lebel, input[type ="text"],input[type = "number"], input [type="email"], textarea{
+flex-basis: 45%;
+margin: 5px;
+padding: 10px;
+resize: none;
+}
